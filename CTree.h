@@ -102,7 +102,7 @@ Node<T>* erase(Node<T>* root, T x)
 	delete res2.second;
 	return merge(res2.first, res1.second);
 }
-template<typename T>
+template<class T>
 ostream& operator<<(ostream& out, Node<T>* root)
 {
 	if (root->left != nullptr)
@@ -124,7 +124,7 @@ int depth(Node<T>* root)
 	return 1 + max(depth(root->left), depth(root->right));
 }
 
-template<typename T>
+template<class T>
 int height(Node<T>* root)
 {
 	if (root == nullptr)
@@ -133,7 +133,7 @@ int height(Node<T>* root)
 		return 1 + height(root->left) + height(root->right);
 }
 
-template<typename T>
+template<class T>
 int size(Node<T>* root)
 {
 	if (root == nullptr)
@@ -143,7 +143,7 @@ int size(Node<T>* root)
 }
 
 template<class T>
-int get_by_index(Node<T>* root, int index)//нужно доделать и сделать поиск элемента по индексу
+int get_by_index(Node<T>* root, int index)
 {
 	if (root == nullptr)
 		throw - 1;

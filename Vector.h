@@ -1,6 +1,6 @@
 #pragma once
 
-template<typename T>
+template<class T>
 class vector
 {
 private:
@@ -35,7 +35,7 @@ public:
 
 };
 
-template<typename T>
+template<class T>
 void vector<T>::upCapacity()
 {
 	capacity *= 2;
@@ -46,7 +46,7 @@ void vector<T>::upCapacity()
 	delete[] new_mass;
 }
 
-template<typename T>
+template<class T>
 vector<T>::vector<T>(int len)
 {
 	capacity = len;
@@ -54,7 +54,7 @@ vector<T>::vector<T>(int len)
 	mass = new T[capacity];
 }
 
-template<typename T>
+template<class T>
 vector<T>::vector<T>()
 {
 	capacity = 1;
@@ -62,13 +62,13 @@ vector<T>::vector<T>()
 	mass = new T[1];
 }
 
-template<typename T>
+template<class T>
 vector<T>::~vector()
 {
 	delete[] mass;
 }
 
-template<typename T>
+template<class T>
 vector<T>::vector(vector<T>& other)
 {
 	if (this != &other)
@@ -82,7 +82,7 @@ vector<T>::vector(vector<T>& other)
 	}
 }
 
-template<typename T>
+template<class T>
 void vector<T>::push_back(T data)
 {
 	if (size < capacity)
@@ -98,19 +98,19 @@ void vector<T>::push_back(T data)
 	}
 }
 
-template<typename T>
+template<class T>
 T& vector<T>::operator[](int pos)
 {
 	return mass[pos];
 }
 
-template<typename T>
+template<class T>
 const T& vector<T>::operator[](int pos) const
 {
 	return mass[pos];
 }
 
-template<typename T>
+template<class T>
 vector<T>& vector<T>::operator=(const vector<T>& otherVector)
 {
 	capacity = otherVector.capacity;
@@ -122,7 +122,7 @@ vector<T>& vector<T>::operator=(const vector<T>& otherVector)
 	return *this;
 }
 
-template<typename T>
+template<class T>
 void vector<T>::clear()
 {
 	delete[] mass;
@@ -131,7 +131,7 @@ void vector<T>::clear()
 	mass = new T[capacity];
 }
 
-template<typename T>
+template<class T>
 T vector<T>::pop_back()
 {
 	if (size - 1 < 0)
@@ -140,7 +140,7 @@ T vector<T>::pop_back()
 	return mass[size];
 }
 
-template<typename T>
+template<class T>
 void vector<T>::erase_by_index(int pos)
 {
 	for (int i = pos; i < size - 1; i++)
@@ -148,7 +148,7 @@ void vector<T>::erase_by_index(int pos)
 	size--;
 }
 
-template<typename T>
+template<class T>
 void vector<T>::erase(T data)
 {
 	int shift = 0;
@@ -166,7 +166,7 @@ void vector<T>::erase(T data)
 	size -= shift;
 }
 
-template<typename T>
+template<class T>
 void vector<T>::insert(T data, int pos)
 {
 	if (size < pos or pos < 0)
@@ -184,7 +184,7 @@ void vector<T>::insert(T data, int pos)
 	mass[pos] = data;
 }
 
-template<typename T>
+template<class T>
 int vector<T>::find(T data)
 {
 	for (int i = 0; i < size; i++)
@@ -195,7 +195,7 @@ int vector<T>::find(T data)
 	return -1;
 }
 
-template<typename T>
+template<class T>
 int vector<T>::count(T data)
 {
 	int count = 0;
@@ -207,13 +207,13 @@ int vector<T>::count(T data)
 	return count;
 }
 
-template<typename T>
+template<class T>
 int vector<T>::len()
 {
 	return size;
 }
 
-template<typename T>
+template<class T>
 bool vector<T>::isEmpty()
 {
 	if (size == 0)
@@ -221,25 +221,25 @@ bool vector<T>::isEmpty()
 	return false;
 }
 
-template<typename T>
+template<class T>
 T* vector<T>::begin()
 {
 	return &mass[0];
 }
 
-template<typename T>
+template<class T>
 const T* vector<T>::begin() const
 {
 	return &mass[0];
 }
 
-template<typename T>
+template<class T>
 T* vector<T>::end()
 {
 	return &mass[size - 1];
 }
 
-template<typename T>
+template<class T>
 const T* vector<T>::end() const
 {
 	return &mass[size - 1];

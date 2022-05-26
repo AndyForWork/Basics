@@ -140,13 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AVLTree.h" />
-    <ClInclude Include="AVLTree_updated.h" />
     <ClInclude Include="CTree.h" />
     <ClInclude Include="Deque.h" />
     <ClInclude Include="ListOD.h" />
     <ClInclude Include="ListTD.h" />
     <ClInclude Include="Queue.h" />
-    <ClInclude Include="RBTree.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>

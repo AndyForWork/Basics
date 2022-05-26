@@ -149,13 +149,3 @@ AVLTree<T>* erase(AVLTree<T>* root, int key)
 	return balance(root);
 }
 
-template<class T>
-void updateValue(AVLTree<T>* root, int key, int new_key)
-{
-	if (root->key == key)
-		root->key = new_key;
-	else if (root->key > key)
-		updateValue(root->left, key, new_key);
-	else
-		updateValue(root->right, key, new_key);
-}
