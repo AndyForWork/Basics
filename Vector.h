@@ -134,6 +134,8 @@ void vector<T>::clear()
 template<typename T>
 T vector<T>::pop_back()
 {
+	if (size - 1 < 0)
+		throw - 1;
 	size--;
 	return mass[size];
 }
